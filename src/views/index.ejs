@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scroller</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Generate 100 numbers at the start -->
+        <% for (let i=0; i <=100; i++) { %>
+            <p>
+                <%= "0" .repeat(10 - i.toString().length) + i %>
+            </p>
+            <% } %>
+    </div>
+</body>
+
+<!-- Generate numbers with each scroll -->
+<script>
+    let scrollingDownNumber = 100;
+    let scrollingUpNumber = 1;
+    // int limit 2147483647 - 10 zeros
+
+    window.addEventListener("wheel", (event) => {
+        const newNumber = document.createElement("p");
+        if (event.deltaY > 0) {
+            newNumber.textContent = "0".repeat(10 - scrollingDownNumber.toString().length) + (scrollingDownNumber).toString();
+            document.querySelector(".container").appendChild(newNumber);
+            scrollingDownNumber++;
+        } else if (event.deltaY < 0) {
+            // upscroll code
+            const newNumber = document.createElement("p");
+            newNumber.textContent = "-" + "0".repeat(10 - scrollingUpNumber.toString().length) + (scrollingUpNumber).toString();
+            document.querySelector(".container").insertBefore(newNumber, document.querySelector(".container").firstChild);
+            scrollingUpNumber++;
+        }
+    });
+</script>
+
+</html>
