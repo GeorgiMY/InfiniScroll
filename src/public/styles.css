@@ -1,0 +1,16 @@
+body {
+    background-color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #e6f3ff;
+    padding: 0px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

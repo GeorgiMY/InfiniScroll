@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Scroller</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -12,7 +14,7 @@
         <!-- Generate 100 numbers at the start -->
         <% for (let i=0; i <=100; i++) { %>
             <p>
-                <%= "0" .repeat(10 - i.toString().length) + i %>
+                <span style="color: gray;"><%="0".repeat(10 - i.toString().length)%></span><%= i %>
             </p>
             <% } %>
     </div>
@@ -26,14 +28,26 @@
 
     window.addEventListener("wheel", (event) => {
         const newNumber = document.createElement("p");
+
         if (event.deltaY > 0) {
-            newNumber.textContent = "0".repeat(10 - scrollingDownNumber.toString().length) + (scrollingDownNumber).toString();
+            newNumber.textContent = scrollingDownNumber.toString();
+
+            const zeros = document.createElement("span");
+            zeros.textContent = "0".repeat(10 - scrollingDownNumber.toString().length);
+            zeros.style.color = "gray";
+            newNumber.insertBefore(zeros, newNumber.firstChild);
+
             document.querySelector(".container").appendChild(newNumber);
             scrollingDownNumber++;
         } else if (event.deltaY < 0) {
             // upscroll code
-            const newNumber = document.createElement("p");
-            newNumber.textContent = "-" + "0".repeat(10 - scrollingUpNumber.toString().length) + (scrollingUpNumber).toString();
+            newNumber.textContent = scrollingUpNumber.toString();
+
+            const zeros = document.createElement("span");
+            zeros.textContent = "-" + "0".repeat(10 - scrollingUpNumber.toString().length);
+            zeros.style.color = "gray";
+            newNumber.insertBefore(zeros, newNumber.firstChild);
+
             document.querySelector(".container").insertBefore(newNumber, document.querySelector(".container").firstChild);
             scrollingUpNumber++;
         }
