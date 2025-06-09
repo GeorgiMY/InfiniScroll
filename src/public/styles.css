@@ -1,6 +1,7 @@
 body {
-    background-color: white;
-    font-family: 'Inter', sans-serif;
+    background-color: aliceblue;
+    font-family: 'JetBrains Mono', 'Roboto Mono', monospace;
+    font-size: 48px;
     margin: 0px;
     padding: 0px 20px;
     display: flex;
@@ -8,9 +9,121 @@ body {
     align-items: center;
 }
 
+.main-content {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    position: relative;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
 .container {
     background-color: #e6f3ff;
+    width: 20vw;
+    text-align: center;
     padding: 0px 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.stats-window {
+    background-color: #e6f3ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    min-width: 200px;
+}
+
+.stats-window h3 {
+    text-align: center;
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    color: #333;
+}
+
+.stats-window p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #555;
+}
+
+.ad-container {
+    background-color: #e6f3ff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    min-width: 300px;
+    height: calc(50vh - 70px);
+}
+
+.ad-container.right {
+    height: calc(100vh - 260px);
+}
+
+.ad-container.left {
+    position: sticky;
+    top: 20px;
+}
+
+.ad-placeholder {
+    height: calc(100% - 50px);
+    background-color: #f0f8ff;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.ad-placeholder p {
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+}
+
+.ad-placeholder a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.ad-container:hover .ad-placeholder a {
+    color: #1DA1F2;
+}
+
+.ad-container:hover .ad-placeholder a:hover {
+    color: #0c85d0;
+    text-decoration: underline;
+}
+
+.ad-placeholder .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
 }

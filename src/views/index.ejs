@@ -6,52 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Infinite Scroller</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <!-- Generate 100 numbers at the start -->
-        <% for (let i=0; i <=100; i++) { %>
-            <p>
-                <span style="color: gray;"><%="0".repeat(10 - i.toString().length)%></span><%= i %>
-            </p>
-            <% } %>
+    <div class="main-content">
+        <div class="left-column">
+            <div class="ad-container top">
+                <div class="ad-placeholder">
+                    <p>Advertisement Space</p>
+                    <p>To buy this space<br>contact me at the links below</p>
+                    <div class="contact-links">
+                        <a href="mailto:georgimy07@gmail.com">georgimy07@gmail.com</a>
+                        <a href="https://x.com/Georgi_MY" target="_blank">Follow on X</a>
+                        <a href="https://github.com/GeorgiMY/InfiniScroller" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ad-container bottom">
+                <div class="ad-placeholder">
+                    <p>Advertisement Space</p>
+                    <p>To buy this space<br>contact me at the links below</p>
+                    <div class="contact-links">
+                        <a href="mailto:georgimy07@gmail.com">georgimy07@gmail.com</a>
+                        <a href="https://x.com/Georgi_MY" target="_blank">Follow on X</a>
+                        <a href="https://github.com/GeorgiMY/InfiniScroller" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Generate 100 numbers at the start -->
+            <% for (let i=0; i <= 100; i++) { %>
+                <p>
+                    <span style="color: gray;"><%="0".repeat(10 - i.toString().length)%></span><%= i %>
+                </p>
+                <% } %>
+        </div>
+        <div class="right-column">
+            <div class="stats-window">
+                <h3>Stats</h3>
+                <p>Lines/s: <span id="linesPerSecond">0</span></p>
+                <p>Total lines: <span id="totalLines">0</span></p>
+            </div>
+            <!-- <div class="stats-window">
+                <h3>Coming soon...</h3>
+                <p>Special number highlighting</p>
+                <p>Background music</p>
+                <p>Rainbow mode</p>
+            </div> -->
+            <div class="ad-container right">
+                <div class="ad-placeholder">
+                    <p>Advertisement Space</p>
+                    <p>To buy this space<br>contact me at the links below</p>
+                    <div class="contact-links">
+                        <a href="mailto:georgimy07@gmail.com">georgimy07@gmail.com</a>
+                        <a href="https://x.com/Georgi_MY" target="_blank">Follow on X</a>
+                        <a href="https://github.com/GeorgiMY/InfiniScroller" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
-
-<!-- Generate numbers with each scroll -->
-<script>
-    let scrollingDownNumber = 100;
-    let scrollingUpNumber = 1;
-    // int limit 2147483647 - 10 zeros
-
-    window.addEventListener("wheel", (event) => {
-        const newNumber = document.createElement("p");
-
-        if (event.deltaY > 0) {
-            newNumber.textContent = scrollingDownNumber.toString();
-
-            const zeros = document.createElement("span");
-            zeros.textContent = "0".repeat(10 - scrollingDownNumber.toString().length);
-            zeros.style.color = "gray";
-            newNumber.insertBefore(zeros, newNumber.firstChild);
-
-            document.querySelector(".container").appendChild(newNumber);
-            scrollingDownNumber++;
-        } else if (event.deltaY < 0) {
-            // upscroll code
-            newNumber.textContent = scrollingUpNumber.toString();
-
-            const zeros = document.createElement("span");
-            zeros.textContent = "-" + "0".repeat(10 - scrollingUpNumber.toString().length);
-            zeros.style.color = "gray";
-            newNumber.insertBefore(zeros, newNumber.firstChild);
-
-            document.querySelector(".container").insertBefore(newNumber, document.querySelector(".container").firstChild);
-            scrollingUpNumber++;
-        }
-    });
-</script>
-
+<script src="/script.js"></script>
 </html>
