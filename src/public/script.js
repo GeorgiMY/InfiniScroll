@@ -1,3 +1,17 @@
+// Generate 100 numbers at the start
+for (let i = 0; i <= 100; i++) {
+    const newNumber = document.createElement("p");
+    newNumber.textContent = i.toString();
+
+    const zeros = document.createElement("span");
+    zeros.textContent = "0".repeat(10 - i.toString().length);
+    zeros.style.color = "gray";
+    newNumber.insertBefore(zeros, newNumber.firstChild);
+
+
+    document.querySelector(".container").appendChild(newNumber);
+}
+
 // Generate numbers with each scroll
 
 let scrollingDownNumber = 100;
