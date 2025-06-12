@@ -66,7 +66,7 @@ body {
     color: #555;
 }
 
-.ad-container {
+.cool-container {
     background-color: #e6f3ff;
     padding: 20px;
     border-radius: 8px;
@@ -76,16 +76,16 @@ body {
     height: calc(50vh - 70px);
 }
 
-.ad-container.right {
+.cool-container.right {
     height: calc(100vh - 260px);
 }
 
-.ad-container.left {
+.cool-container.left {
     position: sticky;
     top: 20px;
 }
 
-.ad-placeholder {
+.cool-placeholder {
     height: calc(100% - 50px);
     background-color: #f0f8ff;
     border: 2px dashed #ccc;
@@ -99,31 +99,61 @@ body {
     gap: 15px;
 }
 
-.ad-placeholder p {
+.cool-placeholder p {
     margin: 0;
     font-size: 18px;
     color: #666;
 }
 
-.ad-placeholder a {
+.cool-placeholder a {
     color: #cccccc;
     text-decoration: none;
     font-size: 16px;
 }
 
-.ad-container:hover .ad-placeholder a {
+.cool-container:hover .cool-placeholder a {
     color: #1DA1F2;
 }
 
-.ad-container:hover .ad-placeholder a:hover {
+.cool-container:hover .cool-placeholder a:hover {
     color: #0c85d0;
     text-decoration: underline;
 }
 
-.ad-placeholder .contact-links {
+.cool-placeholder .contact-links {
     display: flex;
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
     transition: opacity 0.3s ease;
+}
+
+.top-right-social {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    z-index: 1000;
+    display: flex;
+    gap: 18px;
+    background: #e6f3ff;
+    border-radius: 32px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 8px 18px;
+    align-items: center;
+}
+
+.top-right-social a {
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.top-right-social a:hover {
+    color: #1DA1F2;
+}
+
+.top-right-social svg {
+    display: block;
 }
