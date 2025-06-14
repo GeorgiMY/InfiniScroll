@@ -53,13 +53,6 @@ body {
     min-width: 200px;
 }
 
-.stats-window h3 {
-    text-align: center;
-    margin: 0 0 15px 0;
-    font-size: 28px;
-    color: #333;
-}
-
 .stats-window p {
     margin: 10px 0;
     font-size: 20px;
@@ -129,9 +122,9 @@ body {
 }
 
 .top-right-social {
-    position: fixed;
-    top: 24px;
-    right: 32px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
     z-index: 1000;
     display: flex;
     gap: 18px;
@@ -158,7 +151,6 @@ body {
     display: block;
 }
 
-/* Accessibility */
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -171,7 +163,6 @@ body {
     border: 0;
 }
 
-/* Ensure proper heading hierarchy styles */
 h1,
 h2 {
     color: #333;
@@ -179,7 +170,7 @@ h2 {
 }
 
 .stats-window h2 {
-    text-align: center;
+    text-align: left;
     font-size: 28px;
 }
 
@@ -189,15 +180,53 @@ h2 {
     color: #666;
 }
 
-/* Focus styles for better accessibility */
 a:focus-visible {
     outline: 2px solid #1DA1F2;
     outline-offset: 2px;
     border-radius: 4px;
 }
 
-/* Ensure sufficient color contrast */
 .cool-placeholder a {
     color: #666;
-    /* Improved from #cccccc for better contrast */
+}
+
+@media screen and (max-width: 1530px) {
+    .stats-window {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 1230px) {
+    .container {
+        min-width: 260px;
+    }
+
+    .left-column {
+        display: none;
+    }
+}
+
+/* For phones */
+@media screen and (max-width: 768px) {
+    .stats-window {
+        position: fixed;
+        left: 1px;
+        right: 1px;
+        z-index: 1000;
+        text-align: center;
+    }
+
+    .stats-window h2 {
+        text-align: center;
+    }
+
+    .top-right-social {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .cool-container.right {
+        display: none;
+    }
 }
