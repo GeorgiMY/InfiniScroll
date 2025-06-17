@@ -82,8 +82,8 @@
             </div>
         </aside>
 
+        <h1 class="visually-hidden">Infinite Number Scroller</h1>
         <section class="container" aria-label="Infinite Number Scroller">
-            <h1 class="visually-hidden">Infinite Number Scroller</h1>
             <!-- All the numbers will be generated here -->
         </section>
 
@@ -92,6 +92,15 @@
                 <h2>Stats</h2>
                 <p>Lines/s: <span id="linesPerSecond" aria-live="polite">0</span></p>
                 <p>Total lines: <span id="totalLines" aria-live="polite">0</span></p>
+                <div class="switch-container">
+                    <span>Colors</span>
+                    <label class="switch">
+                        <input type="checkbox" id="modeSwitch" checked="true">
+                        <span class="slider"></span>
+                    </label>
+                    <span>Numbers</span>
+                </div>
+                <button id="resetButton" class="reset-button">Reset</button>
 
                 <!-- Top-right social links -->
                 <nav class="top-right-social" aria-label="Social Links">
